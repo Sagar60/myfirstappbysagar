@@ -17,7 +17,11 @@ const bodyParser = require('body-parser');
 // })
 app.use(bodyParser.urlencoded({extended: false}))
 
-
+app.use('/server',(rer,res,next)=>{
+    res.status(200).json({
+        message: 'hello server started'
+    })
+})
 
 app.get('/cal',(req,res)=>{
     let result = 0;
